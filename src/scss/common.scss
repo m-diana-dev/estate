@@ -2,3 +2,57 @@
     position: relative;
     z-index: 2;
 }
+
+.messengers {
+    display: flex;
+    align-items: center;
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(30);
+        height: rem(30);
+        font-size: rem(16);
+        border-radius: 50%;
+        background-color: $main;
+        color: $mainLightColor;
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        transform: perspective(1px) translateZ(0);
+        transition: all 0.2s;
+        &._icon-telegram {
+            font-size: rem(11);
+            @media (max-width: $tablet) {
+                font-size: rem(10);
+            }
+            @media (max-width: $mobileSmall) {
+                font-size: rem(16);
+            }
+            &::before {
+                transform: translateX(-1px);
+            }
+        }
+        &:not(:last-child) {
+            margin-right: rem(10);
+            @media (max-width: $mobileSmall) {
+                margin-right: rem(18);
+            }
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        @media (max-width: $tablet) {
+            width: rem(28);
+            height: rem(28);
+            font-size: rem(14);
+        }
+        @media (max-width: $mobileSmall) {
+            width: rem(40);
+            height: rem(40);
+            font-size: rem(22);
+        }
+    }
+}

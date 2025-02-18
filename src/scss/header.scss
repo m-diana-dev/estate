@@ -1,0 +1,385 @@
+.header {
+   padding: rem(25) 0;
+   @media (max-width: $mobile) {
+      padding: rem(23) 0;
+   }
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__logo {
+      font-family: $secondFont;
+      font-weight: 700;
+      font-size: rem(36);
+      line-height: 139%;
+      letter-spacing: -0.01em;
+      color: $main;
+      @media (max-width: em(1200)) {
+         font-size: rem(32);
+      }
+      @media (max-width: $tablet) {
+         font-size: rem(28);
+      }
+      @media (max-width: em(830)) {
+         font-size: rem(22);
+      }
+      @media (max-width: $mobile) {
+         order: 1;
+      }
+   }
+
+   &__menu {
+      width: calc(100% - 376px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 30px;
+      @media (max-width: em(1200)) {
+         padding-left: 0;
+      }
+      @media (max-width: $tablet) {
+         width: calc(100% - 325px);
+      }
+      @media (max-width: $mobile) {
+         width: auto;
+         order: 3;
+      }
+   }
+
+   &__wrapp {
+      display: flex;
+      align-items: center;
+      @media (max-width: $mobile) {
+         order: 2;
+         width: calc(100% - 150px);
+         justify-content: flex-end;
+      }
+   }
+
+   &__messengers {
+      margin-right: rem(22);
+      @media (max-width: $tablet) {
+         margin-right: rem(15);
+      }
+   }
+
+   &__phone {
+      font-size: rem(16);
+      line-height: 140%;
+      color: $main;
+      margin-right: rem(20);
+      transition: all 0.2s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: #548fff;
+         }
+      }
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+         margin-right: rem(15);
+      }
+      @media (max-width: $mobile) {
+         display: none;
+      }
+   }
+
+   &__lang {
+      position: relative;
+      font-size: rem(16);
+      line-height: 140%;
+      color: $main;
+      transition: all 0.2s;
+      &::before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 1px;
+         background-color: $main;
+         bottom: 1px;
+         transition: all 0.2s;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            &::before {
+               opacity: 0;
+            }
+         }
+      }
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+      }
+      @media (max-width: $mobile) {
+         font-size: rem(16);
+         &::before {
+            display: none;
+         }
+      }
+   }
+}
+.menu {
+   &__icon {
+   }
+
+   &__body {
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         height: calc(100vh - 76px);
+         padding: rem(10) rem(24) rem(35);
+         top: -100%;
+         left: 0;
+         overflow: auto;
+         box-sizing: border-box;
+         background: #fff;
+         transition: all 0.2s ease 0s;
+         z-index: 4;
+
+         .menu-open & {
+            top: rem(76);
+         }
+      }
+   }
+
+   &__list {
+      display: flex;
+      align-items: center;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         align-items: flex-start;
+         margin-bottom: rem(60);
+      }
+   }
+
+   &__item {
+      &:not(:last-child) {
+         margin-right: rem(52);
+         @media (max-width: em(1200)) {
+            margin-right: rem(20);
+         }
+         @media (max-width: $tablet) {
+            margin-right: rem(10);
+         }
+         @media (max-width: em(830)) {
+            margin-right: rem(7);
+         }
+         @media (max-width: $mobile) {
+            margin-right: 0;
+            margin-bottom: rem(28);
+         }
+      }
+   }
+   ul {
+      li {
+         position: relative;
+         &:has(ul:hover) > div {
+            border-radius: 10px 10px 0 0;
+            background-color: #f1f4fd;
+            &::before {
+               transform: rotate(-180deg);
+            }
+            @media (max-width: $mobile) {
+               background-color: transparent;
+               border-radius: 0;
+               &::before {
+                  transform: rotate(0deg);
+               }
+            }
+         }
+         &:hover {
+            ul {
+               opacity: 1;
+               pointer-events: initial;
+               -webkit-backface-visibility: visible;
+               backface-visibility: visible;
+            }
+         }
+         a,
+         div {
+            font-size: rem(16);
+            line-height: 140%;
+            color: $main;
+            @media (max-width: $tablet) {
+               font-size: rem(14);
+            }
+            @media (max-width: $mobile) {
+               font-size: rem(30);
+            }
+         }
+         div {
+            &:hover {
+               border-radius: 10px 10px 0 0;
+            }
+         }
+         ul {
+            max-width: 100%;
+            width: 100%;
+            padding: rem(2) rem(20) rem(10);
+            border-radius: 0 0 10px 10px;
+            background: #f1f4fd;
+            border-top: 1px solid #d9e4f8;
+            position: absolute;
+            transition: all 0.2s ease;
+            opacity: 0;
+            pointer-events: none;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            z-index: 50;
+            &:hover {
+               div + & {
+                  border-radius: 10px 10px 0 0;
+                  background-color: #f1f4fd;
+                  &::before {
+                     transform: rotate(-180deg);
+                  }
+               }
+            }
+            @media (max-width: $tablet) {
+               padding: rem(2) rem(15) rem(10);
+            }
+            @media (max-width: em(830)) {
+               padding: rem(2) rem(10) rem(5);
+            }
+
+            @media (max-width: $mobile) {
+               opacity: 1;
+               pointer-events: initial;
+               backface-visibility: visible;
+               position: static;
+               border: none;
+               width: 100%;
+               padding: 0;
+               background-color: transparent;
+               border-radius: 0;
+               padding-left: rem(20);
+               padding-top: rem(10);
+            }
+            li {
+               a {
+                  display: inline-block;
+                  padding: 5px 0;
+                  @media (max-width: $mobile) {
+                     font-size: rem(16);
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   &__link {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      border-radius: 10px;
+      padding: rem(6) rem(20);
+      background-color: $mainLightColor;
+      cursor: pointer;
+      transition: all 0.2s;
+      &::before {
+         font-size: rem(6);
+         margin-left: rem(6);
+         transition: all 0.2s;
+         @media (max-width: $tablet) {
+            font-size: rem(5);
+            margin-left: rem(5);
+         }
+         @media (max-width: $mobile) {
+            display: none;
+         }
+      }
+      &:hover {
+         background-color: #f1f4fd;
+         &::before {
+            transform: rotate(-180deg);
+         }
+         @media (max-width: $mobile) {
+            background-color: transparent;
+            &::before {
+               transform: rotate(0deg);
+            }
+         }
+      }
+      @media (max-width: $tablet) {
+         padding: rem(5) rem(15);
+      }
+      @media (max-width: em(830)) {
+         padding: rem(5) rem(10);
+      }
+      @media (max-width: $mobile) {
+         border-radius: 0;
+         padding: 0;
+         display: block;
+         font-family: $secondFont;
+         font-size: rem(30);
+         line-height: 100%;
+      }
+   }
+   &__phones {
+      display: none;
+      font-size: rem(14);
+      line-height: 171%;
+      color: $main;
+      margin-bottom: rem(10);
+      @media (max-width: $mobile) {
+         display: block;
+      }
+   }
+}
+
+.icon-menu {
+   display: none;
+
+   @media (max-width: $mobile) {
+      display: block;
+      position: relative;
+      width: rem(30);
+      height: rem(20);
+      cursor: pointer;
+
+      span,
+      &::before,
+      &::after {
+         content: "";
+         transition: all 0.3s ease 0s;
+         left: 0px;
+         position: absolute;
+         width: 100%;
+         height: 1px;
+         background-color: $main;
+      }
+
+      &::before {
+         top: 0px;
+      }
+
+      &::after {
+         bottom: 0px;
+      }
+
+      span {
+         top: calc(50% - 1px);
+      }
+
+      .menu-open & {
+         span {
+            transform: scale(0);
+         }
+
+         &::before {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+         }
+
+         &::after {
+            transform: rotate(45deg);
+            bottom: calc(50% - 1px);
+         }
+      }
+   }
+}
