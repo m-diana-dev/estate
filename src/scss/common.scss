@@ -3,6 +3,112 @@
     z-index: 2;
 }
 
+p {
+    font-size: rem(16);
+    line-height: 150%;
+    &:not(:last-child) {
+        margin-bottom: rem(15);
+        @media (max-width: $mobile) {
+            margin-bottom: rem(10);
+        }
+    }
+    @media (max-width: $mobile) {
+        font-size: rem(15);
+        line-height: 147%;
+    }
+}
+
+.title {
+    font-family: $secondFont;
+    @include adaptiveValue("font-size", 42, 23);
+    line-height: 119%;
+    letter-spacing: -0.01em;
+}
+
+.btn {
+    position: relative;
+    border-radius: 50px;
+    padding: rem(18) rem(38) rem(20);
+    font-size: rem(16);
+    line-height: 140%;
+    color: $mainLightColor;
+    background-color: $main;
+    transition: all 0.3s;
+    @media (max-width: em(360)) {
+        padding: rem(18) rem(15) rem(20);
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+            span {
+                &::before {
+                    transform: scaleX(1.4) translateX(4px);
+                }
+            }
+        }
+    }
+    &:active {
+        background-color: #003aa6;
+        &::before {
+            opacity: 0;
+        }
+    }
+    &--disabled {
+        pointer-events: none;
+        background-color: rgba(0, 72, 206, 0.2);
+        &::before {
+            opacity: 0;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 50px;
+        background: linear-gradient(90deg, rgba(0, 72, 206, 0.4) 0%, rgba(212, 223, 248, 0.4) 100%);
+        transition: all 0.3s;
+    }
+    span {
+        position: relative;
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        z-index: 2;
+        &::before {
+            margin-left: rem(20);
+            font-size: rem(11);
+            transform: scaleX(1);
+            transition: all 0.3s;
+        }
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    &__item {
+        font-size: rem(20);
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        transform: perspective(1px) translateZ(0);
+        transition: all 0.2s;
+        &:not(:last-child) {
+            margin-right: rem(10);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
 .messengers {
     display: flex;
     align-items: center;

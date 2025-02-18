@@ -1,5 +1,7 @@
 .header {
    padding: rem(25) 0;
+   position: relative;
+   z-index: 10;
    @media (max-width: $mobile) {
       padding: rem(23) 0;
    }

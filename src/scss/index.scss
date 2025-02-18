@@ -1,0 +1,206 @@
+//=========main-block
+
+.main-block {
+   color: $mainLightColor;
+   position: relative;
+   &__container {
+   }
+
+   &__inner {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: rem(80) rem(100);
+      background: #6d6c72;
+      border-radius: 16px;
+      @media (max-width: em(1200)) {
+         padding: rem(70) rem(60);
+      }
+      @media (max-width: $tablet) {
+         padding: rem(40) rem(30);
+      }
+      @media (max-width: em(830)) {
+         flex-direction: column;
+         align-items: flex-start;
+      }
+      @media (max-width: em(660)) {
+         padding: rem(40) rem(24) rem(34);
+         width: calc(100% + 48px);
+         margin-left: rem(-24);
+      }
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: rem(-380);
+         right: rem(-810);
+         width: rem(2079);
+         height: rem(1398);
+         background-image: url("../img/main-block/decor.png");
+         background-size: cover;
+         background-repeat: no-repeat;
+         @media (max-width: $tablet) {
+            top: rem(-330);
+            right: rem(-790);
+         }
+         @media (max-width: em(830)) {
+            top: rem(-270);
+            right: rem(-790);
+         }
+         @media (max-width: em(660)) {
+            top: rem(-230);
+            right: rem(-845);
+            transform: scale(0.6) rotate(-7deg);
+         }
+         @media (max-width: $mobileSmall) {
+            top: rem(-130);
+            right: rem(-870);
+         }
+         @media (max-width: em(375)) {
+            top: rem(-70);
+         }
+      }
+   }
+
+   &__img {
+      position: absolute;
+      bottom: 0;
+      right: rem(100);
+      width: rem(463);
+      @media (max-width: em(1200)) {
+         width: rem(423);
+         right: rem(50);
+      }
+      @media (max-width: $tablet) {
+         width: rem(370);
+         right: rem(5);
+      }
+      @media (max-width: em(660)) {
+         right: rem(30);
+         width: rem(330);
+      }
+      @media (max-width: em(360)) {
+         width: rem(310);
+      }
+   }
+
+   &__content {
+      position: relative;
+      max-width: rem(640);
+      width: 100%;
+      z-index: 2;
+      @media (max-width: em(1200)) {
+         max-width: rem(595);
+      }
+      @media (max-width: $tablet) {
+         max-width: rem(540);
+      }
+      @media (max-width: em(830)) {
+         max-width: 100%;
+         margin-bottom: rem(300);
+      }
+      @media (max-width: em(660)) {
+         margin-bottom: rem(360);
+      }
+      p {
+         max-width: rem(560);
+      }
+   }
+
+   &__title {
+      margin-bottom: rem(24);
+      @media (max-width: em(830)) {
+         margin-bottom: rem(20);
+      }
+      @media (max-width: $mobileSmall) {
+         margin-bottom: rem(17);
+      }
+   }
+
+   &__wrapp {
+      display: flex;
+      align-items: center;
+      margin-top: rem(74);
+      @media (max-width: $tablet) {
+         margin-top: rem(40);
+      }
+      @media (max-width: $mobileSmall) {
+         margin-top: rem(24);
+      }
+   }
+
+   &__btn {
+      margin-right: rem(50);
+      @media (max-width: em(830)) {
+         margin-right: 0;
+      }
+      @media (max-width: $mobileSmall) {
+         width: 100%;
+      }
+   }
+
+   &__social {
+      @media (max-width: em(660)) {
+         flex-direction: row-reverse;
+      }
+      .social__item {
+         &:not(:last-child) {
+            margin-right: rem(15);
+            @media (max-width: em(660)) {
+               margin-left: rem(13);
+               margin-right: 0;
+            }
+         }
+      }
+   }
+
+   &__person {
+      position: relative;
+      z-index: 2;
+   }
+}
+.person-main-block {
+   position: relative;
+   height: 100%;
+   @media (max-width: em(660)) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+   }
+   &__img {
+      position: absolute;
+   }
+
+   &__text {
+      @media (max-width: em(830)) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   &__name {
+      font-family: $secondFont;
+      font-size: rem(20);
+      line-height: 120%;
+      margin-bottom: rem(6);
+      @media (max-width: $tablet) {
+         font-size: rem(18);
+      }
+      @media (max-width: em(830)) {
+         font-size: rem(20);
+      }
+   }
+
+   &__post {
+      font-size: rem(15);
+      line-height: 147%;
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+      }
+      @media (max-width: em(830)) {
+         font-size: rem(15);
+      }
+   }
+}
