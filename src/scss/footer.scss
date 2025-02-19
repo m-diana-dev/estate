@@ -1,0 +1,136 @@
+.footer {
+   padding: rem(70) 0 rem(50);
+   background: #f1f4fd;
+   @media (max-width: em(830)) {
+      padding: rem(50) 0;
+   }
+   @media (max-width: em(530)) {
+      padding: rem(22) 0 rem(36);
+   }
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: em(830)) {
+         flex-direction: column;
+      }
+   }
+
+   &__left {
+      max-width: rem(315);
+      width: 100%;
+      margin-right: rem(100);
+      @media (max-width: $tablet) {
+         max-width: rem(230);
+         margin-right: rem(50);
+      }
+      @media (max-width: em(830)) {
+         max-width: 100%;
+         margin-right: 0;
+         margin-bottom: rem(20);
+      }
+   }
+
+   &__logo {
+      display: block;
+      margin-bottom: rem(75);
+      @media (max-width: em(830)) {
+         margin-bottom: rem(20);
+      }
+      @media (max-width: em(530)) {
+         font-size: rem(22);
+      }
+   }
+
+   &__info {
+      font-size: rem(16);
+      line-height: 140%;
+      color: $main;
+      margin-bottom: rem(15);
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+      }
+      @media (max-width: em(530)) {
+         margin-bottom: rem(20);
+      }
+      a {
+         transition: all 0.2s;
+         @media (any-hover: hover) {
+            &:hover {
+               color: #548fff;
+            }
+         }
+      }
+   }
+
+   &__messengers {
+      .messengers__item {
+         width: rem(45);
+         height: rem(45);
+         font-size: rem(26);
+         @media (max-width: $tablet) {
+            width: rem(40);
+            height: rem(40);
+            font-size: rem(22);
+         }
+         &._icon-telegram {
+            font-size: rem(14);
+         }
+         &:not(:last-child) {
+            margin-right: rem(10);
+         }
+      }
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+      max-width: rem(850);
+      width: 100%;
+      @media (max-width: em(830)) {
+         max-width: 100%;
+      }
+   }
+
+   &__menu {
+      flex: 1 1 auto;
+      @media (max-width: em(830)) {
+         margin-bottom: rem(20);
+      }
+      a {
+         transition: all 0.2s;
+         @media (any-hover: hover) {
+            &:hover {
+               color: #548fff;
+            }
+         }
+      }
+   }
+
+   &__spollers {
+      display: flex;
+      justify-content: space-between;
+      max-width: rem(680);
+      @media (max-width: em(530)) {
+         flex-direction: column;
+      }
+   }
+
+   &__bottom {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: rem(12);
+      line-height: 200%;
+      color: rgba($main, 0.5);
+      @media (max-width: em(530)) {
+         font-size: rem(10);
+      }
+      a {
+         transition: all 0.2s;
+         @media (any-hover: hover) {
+            &:hover {
+               color: #548fff;
+            }
+         }
+      }
+   }
+}
